@@ -1,0 +1,63 @@
+# gravity.yaml — Master Brand Profile
+
+tone: "warm, grounded, intimate, collective. no hype. inviting, not pushing."
+
+format:
+  case: "mostly lowercase, capitalize names + titles + venues"
+  spacing: "short lines, lots of air. let the message breathe."
+  punctuation: "no em dashes. use commas, line breaks, or a simple period."
+  asks: "max 2 per message. one clear link per ask."
+
+symbols:
+  warmth: "♡"
+  transition: "⟡"
+  links: "⤐"
+  highlight: "⊙"
+  max_per_message: 3
+
+never:
+  - em dashes
+  - "don't miss"
+  - "exclusive"
+  - "limited spots"
+  - hype language
+  - pushing energy
+  - guru vibes
+  - putting anyone on a pedestal
+
+sign_offs:
+  - "big love, Avi ♡"
+  - "with love, Avi"
+  - "see you soon ♡"
+
+lines:
+  openers:
+    - "still carrying it with me."
+    - "my body is still humming."
+    - "grateful for how we held it."
+    - "hello dear ones ♡"
+
+  gratitude:
+    - "thank you for your presence, your softness, your wildness."
+    - "thank you to everyone who arrived early, stayed late, cleaned, carried, checked in."
+    - "thank you for treating the space with care."
+    - "this community runs on all of us."
+
+  bridge:
+    - "for those asking what's next ⟡"
+    - "if you're feeling the pull forward ⟡"
+    - "a few dates to hold ⟡"
+
+  cta:
+    - "tickets ⤐ [link]"
+    - "early birds ⤐ [link]"
+    - "updates live here ⤐ [link]"
+
+message_flow:
+  1: "soft opener (body feeling, afterglow, simple truth)"
+  2: "gratitude (specific people + unseen helpers)"
+  3: "collective line (community as the engine)"
+  4: "bridge ('for those asking what's next ⟡')"
+  5: "updates (1–2 items, one line each)"
+  6: "home base (updates channel link)"
+  7: "sign off (short, personal)"

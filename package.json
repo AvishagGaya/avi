@@ -1,0 +1,18 @@
+{
+  "name": "gravity-ops-kit",
+  "version": "1.0.0",
+  "description": "Generate event communications for Gravity brand",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "generate": "node src/index.js"
+  },
+  "keywords": ["gravity", "events", "templates"],
+  "author": "Avi",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.0"
+  }
+}

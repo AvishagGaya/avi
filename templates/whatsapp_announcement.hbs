@@ -1,0 +1,33 @@
+hello dear ones ♡
+
+{{intention}}
+
+{{formatDate date}} · {{venue.name}}
+{{hours}}
+
+⟡
+
+{{#each schedule}}
+{{time}} · {{name}}{{#if artist}} with {{artist}}{{/if}}
+{{/each}}
+
+⟡
+
+{{#if offerings}}
+all day ·
+{{#each offerings}}
+{{this}}
+{{/each}}
+{{/if}}
+
+tickets ⤐ {{ticket_link}}
+updates ⤐ {{updates_link}}
+
+{{#if house_rules}}
+a few asks ·
+{{#each house_rules}}
+{{this}}
+{{/each}}
+{{/if}}
+
+see you soon ♡
