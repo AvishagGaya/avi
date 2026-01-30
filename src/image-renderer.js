@@ -120,6 +120,7 @@ function buildIgPostLayout(eventData) {
 
 /**
  * Build the visual layout for a festival IG post
+ * Inspired by Aimara Studio + Tea at Shilo: minimal, nature-connected, sophisticated
  */
 function buildFestivalPostLayout(eventData) {
   const experience = eventData.experience || [];
@@ -132,25 +133,38 @@ function buildFestivalPostLayout(eventData) {
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        backgroundColor: '#2d3a2d', // forest green
-        color: '#f5f0e8', // warm cream
-        padding: '70px',
+        backgroundColor: '#f7f5f0', // warm off-white
+        color: '#1a1a1a', // near black
+        padding: '90px',
         fontFamily: 'Inter',
       },
       children: [
-        // Event name
+        // Event name - clean, understated
         {
           type: 'div',
           props: {
             style: {
-              fontSize: '52px',
-              fontWeight: 700,
-              lineHeight: 1.2,
-              marginBottom: '20px',
+              fontSize: '18px',
+              fontWeight: 400,
+              letterSpacing: '3px',
               textTransform: 'uppercase',
-              letterSpacing: '2px',
+              marginBottom: '60px',
+              opacity: 0.6,
             },
-            children: 'EDLX Equinox',
+            children: 'EDLX presents',
+          },
+        },
+        // Main title
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '64px',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              marginBottom: '16px',
+            },
+            children: 'Equinox',
           },
         },
         // Subtitle
@@ -158,51 +172,74 @@ function buildFestivalPostLayout(eventData) {
           type: 'div',
           props: {
             style: {
-              fontSize: '28px',
+              fontSize: '24px',
               fontWeight: 400,
-              marginBottom: '50px',
-              opacity: 0.9,
+              marginBottom: '80px',
+              opacity: 0.7,
             },
             children: 'body, mind & soul festival',
           },
         },
-        // Date + Venue + Time
-        {
-          type: 'div',
-          props: {
-            style: {
-              fontSize: '24px',
-              marginBottom: '50px',
-              opacity: 0.85,
-              lineHeight: 1.8,
-            },
-            children: `${formatDate(eventData.date)} · spring equinox\n${eventData.venue?.name || ''}\n${eventData.hours || ''}`,
-          },
-        },
-        // Divider
-        {
-          type: 'div',
-          props: {
-            style: {
-              fontSize: '20px',
-              marginBottom: '40px',
-              opacity: 0.5,
-            },
-            children: '~ ~ ~',
-          },
-        },
-        // Experience highlights
+        // Date + Venue block - stacked, clean
         {
           type: 'div',
           props: {
             style: {
               display: 'flex',
               flexDirection: 'column',
-              gap: '14px',
-              fontSize: '22px',
-              opacity: 0.9,
+              gap: '8px',
+              fontSize: '20px',
+              marginBottom: '60px',
+              opacity: 0.85,
             },
-            children: experience.slice(0, 6).map(item => ({
+            children: [
+              {
+                type: 'div',
+                props: {
+                  children: `${formatDate(eventData.date)}`,
+                },
+              },
+              {
+                type: 'div',
+                props: {
+                  children: eventData.venue?.name || '',
+                },
+              },
+              {
+                type: 'div',
+                props: {
+                  children: eventData.hours || '',
+                },
+              },
+            ],
+          },
+        },
+        // Minimal divider
+        {
+          type: 'div',
+          props: {
+            style: {
+              width: '40px',
+              height: '1px',
+              backgroundColor: '#1a1a1a',
+              marginBottom: '60px',
+              opacity: 0.3,
+            },
+            children: '',
+          },
+        },
+        // Experience highlights - minimal list
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px',
+              fontSize: '18px',
+              opacity: 0.75,
+            },
+            children: experience.slice(0, 5).map(item => ({
               type: 'div',
               props: {
                 children: item,
@@ -210,32 +247,16 @@ function buildFestivalPostLayout(eventData) {
             })),
           },
         },
-        // Bottom
+        // Bottom - handle only
         {
           type: 'div',
           props: {
             style: {
               marginTop: 'auto',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              fontSize: '18px',
-              opacity: 0.7,
+              fontSize: '16px',
+              opacity: 0.5,
             },
-            children: [
-              {
-                type: 'div',
-                props: {
-                  children: '@ecstaticdancelx',
-                },
-              },
-              {
-                type: 'div',
-                props: {
-                  children: '~',
-                },
-              },
-            ],
+            children: '@ecstaticdancelx',
           },
         },
       ],
