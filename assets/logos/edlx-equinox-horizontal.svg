@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="150" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Horizontal lockup: icon left, text right -->
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&amp;display=swap');
+      .title-text {
+        font-family: 'Cinzel', serif;
+        font-weight: 500;
+        font-size: 36px;
+        letter-spacing: 0.1em;
+        fill: #1A1A1A;
+      }
+    </style>
+  </defs>
+
+  <!-- Icon group (scaled to fit 120x120, centered at 75, 75) -->
+  <g transform="translate(15, 15) scale(0.12)">
+    <!-- Outer circle -->
+    <circle cx="500" cy="500" r="450" fill="none" stroke="#1A1A1A" stroke-width="25"/>
+
+    <!-- Inner circle -->
+    <circle cx="500" cy="500" r="300" fill="none" stroke="#1A1A1A" stroke-width="25"/>
+
+    <!-- Horizontal line (equator) -->
+    <line x1="200" y1="500" x2="800" y2="500" stroke="#1A1A1A" stroke-width="25"/>
+
+    <!-- Center sun circle -->
+    <circle cx="500" cy="500" r="25" fill="none" stroke="#1A1A1A" stroke-width="25"/>
+
+    <!-- Left intersection circle (day/night) -->
+    <circle cx="200" cy="500" r="15" fill="none" stroke="#1A1A1A" stroke-width="25"/>
+
+    <!-- Right intersection circle (day/night) -->
+    <circle cx="800" cy="500" r="15" fill="none" stroke="#1A1A1A" stroke-width="25"/>
+  </g>
+
+  <!-- Text group -->
+  <text x="170" y="60" class="title-text">EDLX</text>
+  <text x="170" y="110" class="title-text">EQUINOX</text>
+</svg>

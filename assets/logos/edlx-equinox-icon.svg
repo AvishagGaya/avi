@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon only: circles + center element, no text -->
+
+  <!-- Outer circle -->
+  <circle cx="500" cy="500" r="450" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- Inner circle -->
+  <circle cx="500" cy="500" r="300" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- Horizontal line (equator) -->
+  <line x1="200" y1="500" x2="800" y2="500" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- Center sun circle -->
+  <circle cx="500" cy="500" r="25" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- Left intersection circle (day/night) -->
+  <circle cx="200" cy="500" r="15" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+
+  <!-- Right intersection circle (day/night) -->
+  <circle cx="800" cy="500" r="15" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+</svg>

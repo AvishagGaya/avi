@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Text only: EDLX EQUINOX stacked -->
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&amp;display=swap');
+      .title-text {
+        font-family: 'Cinzel', serif;
+        font-weight: 500;
+        font-size: 48px;
+        letter-spacing: 0.1em;
+        fill: #1A1A1A;
+      }
+    </style>
+  </defs>
+
+  <!-- EDLX -->
+  <text x="200" y="75" text-anchor="middle" class="title-text">EDLX</text>
+
+  <!-- EQUINOX -->
+  <text x="200" y="145" text-anchor="middle" class="title-text">EQUINOX</text>
+</svg>
