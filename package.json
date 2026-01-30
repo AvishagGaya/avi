@@ -7,12 +7,18 @@
   "scripts": {
     "generate": "node src/index.js"
   },
-  "keywords": ["gravity", "events", "templates"],
+  "keywords": [
+    "gravity",
+    "events",
+    "templates"
+  ],
   "author": "Avi",
   "license": "MIT",
   "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "commander": "^12.0.0",
     "handlebars": "^4.7.8",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "satori": "^0.19.1"
   }
 }

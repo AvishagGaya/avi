@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 import Handlebars from 'handlebars';
+import { renderImage } from './image-renderer.js';
 
 // Register Handlebars helpers
 Handlebars.registerHelper('formatDate', function(date) {
@@ -63,7 +64,7 @@ export function generateOutput(templateName, eventData, outputDir) {
 /**
  * Main generation function
  */
-export function generate(eventPath, options = {}) {
+export async function generate(eventPath, options = {}) {
   // Load event data
   const eventData = loadYaml(eventPath);
 
@@ -87,7 +88,7 @@ export function generate(eventPath, options = {}) {
     .filter(f => f.endsWith('.hbs'))
     .map(f => f.replace('.hbs', ''));
 
-  // Generate each template
+  // Generate each text template
   const generated = [];
   for (const templateName of templates) {
     try {
@@ -96,6 +97,19 @@ export function generate(eventPath, options = {}) {
       console.log(`  ✓ ${templateName}.md`);
     } catch (err) {
       console.error(`  ✗ ${templateName}: ${err.message}`);
+    }
+  }
+
+  // Generate images
+  const imageTemplates = ['ig_post'];
+  for (const imageName of imageTemplates) {
+    try {
+      const outputPath = path.join(outputDir, `${imageName}.png`);
+      await renderImage(context, imageName, outputPath);
+      generated.push({ template: imageName, path: outputPath });
+      console.log(`  ✓ ${imageName}.png`);
+    } catch (err) {
+      console.error(`  ✗ ${imageName}.png: ${err.message}`);
     }
   }
 

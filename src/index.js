@@ -12,13 +12,13 @@ program
 program
   .argument('<event-file>', 'path to event YAML file')
   .option('-t, --template <name>', 'generate only a specific template')
-  .action((eventFile, options) => {
+  .action(async (eventFile, options) => {
     const eventPath = path.resolve(eventFile);
 
     console.log(`\ngenerating from: ${eventFile}\n`);
 
     try {
-      const result = generate(eventPath, options);
+      const result = await generate(eventPath, options);
       console.log(`\noutputs saved to: ${result.outputDir}\n`);
     } catch (err) {
       console.error(`\nerror: ${err.message}\n`);
