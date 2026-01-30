@@ -25,7 +25,7 @@ async function loadFont() {
 }
 
 /**
- * Build the visual layout for an IG post
+ * Build the visual layout for an IG post (intimate events)
  */
 function buildIgPostLayout(eventData) {
   const schedule = eventData.schedule || [];
@@ -79,7 +79,7 @@ function buildIgPostLayout(eventData) {
               marginBottom: '40px',
               opacity: 0.6,
             },
-            children: '⟡',
+            children: '~',
           },
         },
         // Schedule
@@ -110,7 +110,132 @@ function buildIgPostLayout(eventData) {
               fontSize: '28px',
               opacity: 0.7,
             },
-            children: '♡',
+            children: '~',
+          },
+        },
+      ],
+    },
+  };
+}
+
+/**
+ * Build the visual layout for a festival IG post
+ */
+function buildFestivalPostLayout(eventData) {
+  const experience = eventData.experience || [];
+
+  return {
+    type: 'div',
+    props: {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#2d3a2d', // forest green
+        color: '#f5f0e8', // warm cream
+        padding: '70px',
+        fontFamily: 'Inter',
+      },
+      children: [
+        // Event name
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '52px',
+              fontWeight: 700,
+              lineHeight: 1.2,
+              marginBottom: '20px',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+            },
+            children: 'EDLX Equinox',
+          },
+        },
+        // Subtitle
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '28px',
+              fontWeight: 400,
+              marginBottom: '50px',
+              opacity: 0.9,
+            },
+            children: 'body, mind & soul festival',
+          },
+        },
+        // Date + Venue + Time
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '24px',
+              marginBottom: '50px',
+              opacity: 0.85,
+              lineHeight: 1.8,
+            },
+            children: `${formatDate(eventData.date)} · spring equinox\n${eventData.venue?.name || ''}\n${eventData.hours || ''}`,
+          },
+        },
+        // Divider
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '20px',
+              marginBottom: '40px',
+              opacity: 0.5,
+            },
+            children: '~ ~ ~',
+          },
+        },
+        // Experience highlights
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '14px',
+              fontSize: '22px',
+              opacity: 0.9,
+            },
+            children: experience.slice(0, 6).map(item => ({
+              type: 'div',
+              props: {
+                children: item,
+              },
+            })),
+          },
+        },
+        // Bottom
+        {
+          type: 'div',
+          props: {
+            style: {
+              marginTop: 'auto',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              fontSize: '18px',
+              opacity: 0.7,
+            },
+            children: [
+              {
+                type: 'div',
+                props: {
+                  children: '@ecstaticdancelx',
+                },
+              },
+              {
+                type: 'div',
+                props: {
+                  children: '~',
+                },
+              },
+            ],
           },
         },
       ],
@@ -138,7 +263,12 @@ export async function renderImage(eventData, templateName, outputPath) {
   let layout;
   switch (templateName) {
     case 'ig_post':
-      layout = buildIgPostLayout(eventData);
+      // Use festival layout for EDLX brand or events with 'experience' field
+      if (eventData.brand === 'edlx' || eventData.experience) {
+        layout = buildFestivalPostLayout(eventData);
+      } else {
+        layout = buildIgPostLayout(eventData);
+      }
       break;
     default:
       throw new Error(`Unknown image template: ${templateName}`);

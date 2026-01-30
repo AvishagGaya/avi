@@ -1,71 +1,134 @@
-# event.yaml — Spring Equinox Festival
+# EDLX Equinox: Body, Mind & Soul Festival
 
-name: "Spring Equinox Festival"
-brand: gravity
+name: "EDLX Equinox: Body, Mind & Soul Festival"
+brand: edlx
 date: 2026-03-21
 day: "saturday"
-hours: "14:00 - 23:00"
+hours: "10:00 - 22:00"
 
 venue:
-  name: TBD
-  address: ""
+  name: DOMA Forest Village
+  address: "30 minutes from Lisbon"
   maps_link: ""
   instagram: ""
 
 ticket_link: "https://..."
 updates_link: "https://chat.whatsapp.com/..."
-price: 35
+price: null
+expected_attendance: 500
 
 # The Heart
-intention: "a day to mark the turning of light. to slow down, gather, and welcome spring together."
-guest_feeling: "renewal, connection, grounded celebration"
+intention: "a day festival celebrating balance, renewal, and new beginnings. body, mind, and soul in the forest."
+guest_feeling: "grounded, renewed, connected, alive"
+theme: "Wellness festival celebrating the Spring Equinox"
 
-# Schedule
+# The Experience (high-level)
+experience:
+  - "vendor market with 20+ brands"
+  - "workshops and masterclasses"
+  - "live music, dj sets, performances"
+  - "wellness area with spa, steam, longevity hub"
+  - "ecstatic dance"
+  - "nature-based experiences and rituals"
+  - "family-friendly, intergenerational"
+
+# Schedule (draft arc)
 schedule:
-  - time: "14:00"
+  - time: "10:00"
     name: "gates open"
-    feeling: "arrival, settling in"
-  - time: "15:00"
-    name: "opening circle"
-    feeling: "intention, presence"
-  - time: "16:00"
-    name: "movement session"
-    artist: ""
-    feeling: "awakening the body"
-  - time: "17:30"
-    name: "tea ceremony"
-    artist: ""
-    feeling: "stillness, connection"
-  - time: "19:00"
+    feeling: "arrival, exploration"
+  - time: "11:00"
+    name: "morning movement"
+    feeling: "awakening"
+  - time: "12:30"
+    name: "workshops begin"
+    feeling: "learning, connection"
+  - time: "14:00"
     name: "live music"
-    artist: ""
     feeling: "celebration"
-  - time: "20:30"
-    name: "sound journey"
-    artist: ""
-    feeling: "deep listening"
-  - time: "22:00"
+  - time: "16:00"
+    name: "wellness experiences"
+    feeling: "restoration"
+  - time: "18:00"
+    name: "sunset ritual"
+    feeling: "transition, presence"
+  - time: "19:00"
     name: "ecstatic dance"
-    artist: ""
-    feeling: "release, joy"
-  - time: "23:00"
-    name: "closing"
+    feeling: "release, joy, embodiment"
+  - time: "21:30"
+    name: "closing circle"
     feeling: "integration, gratitude"
+  - time: "22:00"
+    name: "festival closes"
+    feeling: "completion"
 
 # All-Day Offerings
 offerings:
-  - "tea garden"
-  - "nourishing food"
-  - "fire circle"
-  - "chill spaces"
+  - "vendor market"
+  - "spa and steam"
+  - "longevity hub"
+  - "food and drinks"
+  - "nature trails"
+  - "chill zones"
+  - "kids area"
 
-# Collaborators
+# Venue Features
+venue_features:
+  - "immersive forest surroundings"
+  - "purpose-built communal spaces"
+  - "spa and wellness infrastructure"
+  - "pool and outdoor facilities"
+  - "on-site accommodation available"
+
+# About EDLX
+about:
+  tagline: "independent, community-based festival series from Lisbon"
+  editions: 12
+  total_participants: 3000
+  founder: "Avishag Gaya"
+  founder_title: "conscious DJ & cultural curator"
+  known_for: "high-quality, well-held experiences focused on connection and embodiment"
+
+# Target Audience
+audience:
+  ages: "28-50"
+  profile: "creatives, freelancers, entrepreneurs, urban professionals"
+  interests: "movement, music, arts, conscious living, nature"
+  values: "authenticity, quality, ethics, sustainability"
+
+# Past Partners
+past_partners:
+  - "Why Not"
+  - "Ministry of Magic"
+  - "MOM Longevity Alchemists"
+  - "Neos Life"
+  - "By Ana Si"
+  - "MVMT Studio"
+  - "Musique de Lune"
+  - "Mai Kombucha"
+  - "Healthy Horizon"
+  - "Wheelhouse"
+  - "Conscious Health Summit"
+  - "MU Labs"
+  - "Perfect Peaks"
+  - "Ghabits"
+  - "Aimara"
+  - "Temple"
+  - "ImmerSpaces"
+
+# Collaborators (TBD)
 collaborators: []
 
 # House Rules
 house_rules:
-  - "shoes off in the main space"
-  - "phones on silent or tucked away"
+  - "respect the forest"
+  - "phones on silent in ceremony spaces"
   - "take care of each other"
+
+# Contact
+contact:
+  email: "avishagitzhak@gmail.com"
+  phone: "+972526380196"
+  instagram: "@ecstaticdancelx"
 
 invoice_email: "avishagitzhak@gmail.com"
