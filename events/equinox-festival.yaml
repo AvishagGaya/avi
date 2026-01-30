@@ -1,0 +1,71 @@
+# event.yaml — Spring Equinox Festival
+
+name: "Spring Equinox Festival"
+brand: gravity
+date: 2026-03-21
+day: "saturday"
+hours: "14:00 - 23:00"
+
+venue:
+  name: TBD
+  address: ""
+  maps_link: ""
+  instagram: ""
+
+ticket_link: "https://..."
+updates_link: "https://chat.whatsapp.com/..."
+price: 35
+
+# The Heart
+intention: "a day to mark the turning of light. to slow down, gather, and welcome spring together."
+guest_feeling: "renewal, connection, grounded celebration"
+
+# Schedule
+schedule:
+  - time: "14:00"
+    name: "gates open"
+    feeling: "arrival, settling in"
+  - time: "15:00"
+    name: "opening circle"
+    feeling: "intention, presence"
+  - time: "16:00"
+    name: "movement session"
+    artist: ""
+    feeling: "awakening the body"
+  - time: "17:30"
+    name: "tea ceremony"
+    artist: ""
+    feeling: "stillness, connection"
+  - time: "19:00"
+    name: "live music"
+    artist: ""
+    feeling: "celebration"
+  - time: "20:30"
+    name: "sound journey"
+    artist: ""
+    feeling: "deep listening"
+  - time: "22:00"
+    name: "ecstatic dance"
+    artist: ""
+    feeling: "release, joy"
+  - time: "23:00"
+    name: "closing"
+    feeling: "integration, gratitude"
+
+# All-Day Offerings
+offerings:
+  - "tea garden"
+  - "nourishing food"
+  - "fire circle"
+  - "chill spaces"
+
+# Collaborators
+collaborators: []
+
+# House Rules
+house_rules:
+  - "shoes off in the main space"
+  - "phones on silent or tucked away"
+  - "take care of each other"
+
+invoice_email: "avishagitzhak@gmail.com"
