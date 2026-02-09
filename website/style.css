@@ -1,0 +1,322 @@
+/*
+ * EDLX Equinox — Website Styles
+ * Inspired by Aimara Studio + Tea at Shilo
+ * Minimal, nature-connected, sophisticated
+ */
+
+:root {
+  --bg: #f7f5f0;
+  --bg-alt: #efece5;
+  --text: #1a1a1a;
+  --text-muted: rgba(26, 26, 26, 0.6);
+  --text-subtle: rgba(26, 26, 26, 0.4);
+  --accent: #3d4a3d;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Typography */
+h1 {
+  font-size: clamp(64px, 12vw, 120px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+.eyebrow {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-subtle);
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 60px;
+}
+
+.large-text {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Divider */
+.divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--text);
+  opacity: 0.2;
+  margin-bottom: 60px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--bg);
+  background-color: var(--text);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-large {
+  padding: 20px 60px;
+  font-size: 16px;
+}
+
+.link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-subtle);
+  transition: border-color 0.2s ease;
+}
+
+.link:hover {
+  border-color: var(--text);
+}
+
+/* Sections */
+section {
+  padding: 120px 0;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.hero-details {
+  margin-bottom: 60px;
+}
+
+.hero-details p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+/* Intention */
+.intention {
+  background-color: var(--bg-alt);
+  text-align: center;
+  padding: 160px 0;
+}
+
+/* Experience */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px 40px;
+}
+
+.experience-item h3 {
+  color: var(--text);
+}
+
+.experience-item p {
+  font-size: 16px;
+}
+
+/* Schedule */
+.schedule {
+  background-color: var(--bg-alt);
+}
+
+.schedule-list {
+  max-width: 500px;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-item .time {
+  font-size: 16px;
+  color: var(--text-subtle);
+  min-width: 60px;
+}
+
+.schedule-item .event {
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* Venue */
+.venue-content {
+  max-width: 600px;
+}
+
+.venue-text h3 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.venue-text p {
+  margin-bottom: 24px;
+}
+
+.venue-features {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-subtle);
+}
+
+/* Tickets */
+.tickets {
+  background-color: var(--bg-alt);
+  text-align: center;
+}
+
+.tickets-text {
+  font-size: 24px;
+  color: var(--text);
+  margin-bottom: 40px;
+}
+
+.tickets-note {
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+/* About */
+.about-content {
+  max-width: 600px;
+}
+
+.about-content .eyebrow {
+  margin-bottom: 24px;
+}
+
+.about-content p {
+  margin-bottom: 24px;
+}
+
+/* Footer */
+.footer {
+  padding: 60px 0;
+  border-top: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer p {
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+.footer a {
+  color: var(--text-subtle);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 120px 0 80px;
+  }
+
+  .intention {
+    padding: 100px 0;
+  }
+
+  .schedule-item {
+    gap: 24px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
