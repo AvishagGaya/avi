@@ -1,0 +1,45 @@
+[
+  {
+    "_campaign": "1 · Social Gypsy Lunch (first date proposed, to confirm with Gypsy; set weekly repeat in the luma UI after)",
+    "name": "Social Gypsy Lunch · every tuesday",
+    "start_at": "2026-11-10T12:30:00.000Z",
+    "end_at": "2026-11-10T14:30:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "private",
+    "registration_open": false,
+    "max_capacity": 24,
+    "phone_number_requirement": "required",
+    "geo_address_json": { "type": "manual", "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal" },
+    "description_md": "one long table. dishes in the middle. a slow tuesday lunch with people you have not met yet.\n\nevery tuesday the Gypsy kitchen cooks a sharing menu, turkish and mediterranean, served family style. you come alone or with a friend, you sit where there is a seat, and the plates do the introductions.\n\n**12:30** doors open, find a seat at the long table  \n**13:00** dishes arrive, served family style  \n**14:30** tea and goodbyes\n\nvegetarian and vegan plates on every table. tell us about allergies when you register.\n\nsee you around the table ♡"
+  },
+  {
+    "_campaign": "2 · Gypsy Fall Menu Launch, friends and family (private link, approval required)",
+    "name": "Gypsy Fall Menu Launch · friends and family",
+    "start_at": "2026-11-06T19:30:00.000Z",
+    "end_at": "2026-11-06T22:00:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "private",
+    "registration_open": true,
+    "max_capacity": 45,
+    "phone_number_requirement": "required",
+    "show_guest_list": false,
+    "geo_address_json": { "type": "manual", "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal" },
+    "ticket_types": [
+      { "name": "friends and family", "type": "free", "require_approval": true, "max_capacity": 45 }
+    ],
+    "description_md": "the first taste of the autumn menu, shared with the people closest to Gypsy.\n\nbefore the new menu goes public, we gather the people who have been around the table since the beginning. the kitchen serves the autumn plates family style, in three acts, and at the end of the evening we have something to tell you about the new space.\n\n**19:30** doors, a welcome drink  \n**20:00** the autumn menu, served family style  \n**21:30** a few words on the new space  \n**22:00** tea, sweets, goodbyes\n\nthis one is invite only. tell us about allergies when you register.\n\nwith love, Gypsy ♡"
+  },
+  {
+    "_campaign": "3 · Gypsy Dinner in the Sound Room (public; registration opens once Gypsy confirms the price)",
+    "name": "Gypsy Dinner in the Sound Room",
+    "start_at": "2026-11-21T19:30:00.000Z",
+    "end_at": "2026-11-21T22:30:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "public",
+    "registration_open": false,
+    "max_capacity": 45,
+    "phone_number_requirement": "required",
+    "geo_address_json": { "type": "manual", "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal" },
+    "description_md": "the Gypsy long table moves into the sound room for one night.\n\nfloor seating on cushions, our oriental living room, and the autumn menu in three acts, served in the sharing format we love. this time the room itself is part of the evening: the sound system of TEJÁ House holds the space while you eat.\n\n**19:30** doors open  \n**20:00** act one, cold starters  \n**20:45** act two, warm plates  \n**21:45** act three, sweets and tea  \n**22:30** closing\n\nwine pairing is included during act one and act two. shoes off in the sound room. tell us about allergies when you register.\n\nsee you around the table ♡"
+  }
+]
