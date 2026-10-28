@@ -1,0 +1,62 @@
+# LISTEN · Blindfolded Dinner, second edition
+# calendar hold: "Inquiry - Blindfolded dinner", thu 19 nov. time to confirm with Niamh
+# (room free from 20:30 per the 25 oct call; first edition ran 19:00-22:00)
+
+name: "LISTEN · Blindfolded Dining, Music and Tea"
+brand: gypsy
+date: 2026-11-19
+day: "thursday"
+hours: "20:30 - 23:30"
+
+venue:
+  name: TEJÁ HOUSE
+  address: "Cais do Sodré 5, 1200-450 Lisboa"
+  maps_link: ""
+  instagram: "tejahouse"
+
+ticket_link: "https://luma.com/..."
+updates_link: ""
+price: "choose what you pay, 55 to 70"
+expected_attendance: 24
+
+intention: "an evening of exploring flavours and sounds without the sense we rely on most, sight"
+guest_feeling: "present, surprised, listening"
+theme: "blindfolded five-course dinner with live violin and tea"
+
+schedule:
+  - time: "20:30"
+    name: "doors, welcome tea"
+    feeling: "arrival, softening"
+  - time: "21:00"
+    name: "blindfolds on, five courses, Nadeya on violin"
+    feeling: "listening, tasting"
+  - time: "22:30"
+    name: "blindfolds off, tea and conversation"
+    feeling: "reflection, connection"
+  - time: "23:30"
+    name: "closing"
+    feeling: "integration"
+
+offerings:
+  - "five blindfolded courses from the Gypsy kitchen, one for each taste"
+  - "live violin by Nadeya, composed for each dish"
+  - "welcome tea and a closing tea pairing"
+
+collaborators:
+  - name: "Niamh Padma"
+    role: "host, guided dining"
+    type: returning
+    instagram: ""
+  - name: "Nadeya"
+    role: "violin, live set"
+    type: returning
+    instagram: ""
+
+house_rules:
+  - "doors close once dinner begins, no late entry"
+  - "water only during the dinner, the bar opens after"
+  - "tell us about allergies when you register"
+
+contact:
+  email: "curation@tejahouse.com"
+  instagram: "@gypsy.lisboa"

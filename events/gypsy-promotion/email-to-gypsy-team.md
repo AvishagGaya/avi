@@ -10,11 +10,12 @@ hello dear Gypsy team ♡
 
 we are setting up a promotion for Gypsy for november, and we would love to build it together with you.
 
-three things we can push:
+four things we can push:
 
 1. weekly Social Gypsy Lunch, every tuesday, family sharing style. one long table, dishes in the middle, people come alone or with a friend and leave with new ones.
 2. Gypsy fall menu launch, thursday 6 november, 19:30. a friends and family evening, and the moment we announce the new space.
-3. Gypsy dinner in the sound room, saturday 21 november, 19:30.
+3. LISTEN blindfolded dinner, thursday 19 november, second edition with Niamh and Nadeya. five courses from your kitchen, one for each taste, as in october.
+4. Gypsy dinner in the sound room, saturday 21 november, 19:30.
 
 for each one we set up a luma page, an instagram post and a message to the Teja community. the luma pages are drafted already, we send them to you for a yes before anything goes live.
 
@@ -30,6 +31,8 @@ two things we need from you ⊙
 
 1. the tuesday lunch: when would you like to start? we can open the first one on 10 or 17 november, whatever feels right for the kitchen. tell us the time you prefer (12:30 feels good with the kitchen hours) and one price per person for the sharing menu.
 2. the photos and text for each team member, and the lines about the new space, by monday 3 november if possible, so the first posts can go out before the fall menu launch.
+
+for the blindfolded dinner, the menu a week before like last time is perfect.
 
 nothing goes live before you see it.
 

@@ -108,3 +108,47 @@ see you around the table ♡
 - price and guest list approach for 6 november (free for invited, or a set price)
 - price for 21 november, and whether wine pairing is included again
 - a photo of the space for each page, no AI, minimal text, date only on the poster
+
+---
+
+## 4 · LISTEN · Blindfolded Dinner, second edition
+
+**when:** thursday 19 november. room free from 20:30 (25 oct call), first
+edition ran 19:00 to 22:00. payload set to 20:30 to 23:30, confirm with Niamh.
+**hosts:** Niamh Padma (Sensinity) with Nadeya (violin), Gypsy Lisboa, TEJÁ House.
+same co-host setup as https://luma.com/3jqnpx31
+**visibility:** public
+**tickets:** choose what you pay, 55 to 70 euros, as in october. capacity 24.
+**split:** october settled at 945 to Teja and Gypsy, 311.75 to Sensinity,
+before VAT. confirm the same split for this one before publishing.
+
+**title:** LISTEN · Blindfolded Dining, Music and Tea
+
+**description:**
+
+an evening of exploring flavours and sounds without the sense we rely on
+most, sight.
+
+after a full table in october, LISTEN returns. you arrive, you are welcomed
+with tea, and then the blindfolds go on. the Gypsy kitchen serves five
+courses, one for each taste, and Nadeya plays live violin composed for each
+dish. when the blindfolds come off, there is tea, and time to talk about
+what you tasted and heard.
+
+20:30 doors, welcome tea
+21:00 blindfolds on, five courses, Nadeya on violin
+22:30 blindfolds off, tea and conversation
+23:30 closing
+
+hosted by Niamh Padma with Nadeya, Gypsy Lisboa and TEJÁ House.
+
+choose what you pay, between 55 and 70 euros. doors close once dinner
+begins. water only during the dinner, the bar opens after. tell us about
+allergies when you register.
+
+see you in the dark ♡
+
+**open items:** confirm the date and time with Niamh (her 23 oct email
+proposing 12 or 19 november is still unanswered in the thread), the menu
+from Gypsy a week before, and whether the after-party ticket at 10 euros
+from 21:00 returns.
