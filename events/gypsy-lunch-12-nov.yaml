@@ -1,0 +1,35 @@
+# Gypsy Lunch, family style · calendar: "Gypsy Lunch", thu 12 nov 13:00
+
+name: "Gypsy Lunch · family style"
+brand: gypsy
+date: 2026-11-12
+day: "thursday"
+hours: "13:00 - 15:00"
+
+venue:
+  name: TEJÁ HOUSE
+  address: "Cais do Sodré 5, 1200-450 Lisboa"
+  instagram: "tejahouse"
+
+ticket_link: "https://luma.com/..."
+price: null   # one price per person, to confirm with Gypsy
+expected_attendance: 24
+
+intention: "one long table, dishes in the middle, a slow thursday lunch with people you have not met yet"
+guest_feeling: "fed, unhurried, part of something"
+
+schedule:
+  - time: "13:00"
+    name: "doors open, find a seat at the long table"
+  - time: "13:30"
+    name: "dishes arrive, served family style"
+  - time: "15:00"
+    name: "tea and goodbyes"
+
+offerings:
+  - "sharing menu from the Gypsy kitchen, turkish and mediterranean"
+  - "vegetarian and vegan plates on every table"
+
+house_rules:
+  - "come alone or bring a friend, you will leave with more"
+  - "tell us about allergies when you register"
