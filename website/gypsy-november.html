@@ -1,279 +1,269 @@
 <title>Gypsy November</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  /* layout: a kraft menu sheet. one column, typewriter body, condensed black headline,
-     linocut marks in the margins, one terracotta accent for the dates. */
+  /* layout: the TEJÁ calendar grammar from the brand book. text only, by date, a month
+     header, lowercase category tags, mono datelines. Agrandir for everything, system mono
+     for data, the triangle as the click cue, paper grain over the light field. */
+  @font-face {
+    font-family: 'Agrandir';
+    src: url('assets/agrandir-c3-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
   :root {
-    --paper: #e4d6ba;
-    --paper-deep: #d9c8a6;
-    --ink: #1d1a15;
-    --ink-soft: rgba(29, 26, 21, 0.62);
-    --rule: rgba(29, 26, 21, 0.28);
-    --clay: #a8432a;
-    --sky: #b9cdd2;
-    --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
-    --mono: 'Courier Prime', 'Courier New', Courier, monospace;
+    --field: #FAF7F0;        /* light earthy, web */
+    --field-deep: #F1ECE0;
+    --ink: #1F2A33;          /* ink, web */
+    --ink-soft: rgba(31, 42, 51, 0.64);
+    --rule: rgba(31, 42, 51, 0.18);
+    --terracotta: #833A25;   /* warm accent, web */
+    --clay: #C2855E;
+    --sage: #A9BE8C;
+    --river: #5E7E95;
+    --mark-filter: none;
+    --sans: 'Agrandir', 'Helvetica Neue', Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #1a1713; --paper-deep: #221e18; --ink: #e8dcc4;
-      --ink-soft: rgba(232, 220, 196, 0.62); --rule: rgba(232, 220, 196, 0.26);
-      --clay: #d9684a; --sky: #4f6a72; color-scheme: dark;
+      --field: #1F2A33; --field-deep: #26323C; --ink: #DFDCB3;
+      --ink-soft: rgba(223, 220, 179, 0.66); --rule: rgba(223, 220, 179, 0.2);
+      --terracotta: #C2855E; --clay: #BD7662; --sage: #BCBD94; --river: #75A5A9;
+      --mark-filter: brightness(0.92);
+      color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --paper: #1a1713; --paper-deep: #221e18; --ink: #e8dcc4;
-    --ink-soft: rgba(232, 220, 196, 0.62); --rule: rgba(232, 220, 196, 0.26);
-    --clay: #d9684a; --sky: #4f6a72; color-scheme: dark;
+    --field: #1F2A33; --field-deep: #26323C; --ink: #DFDCB3;
+    --ink-soft: rgba(223, 220, 179, 0.66); --rule: rgba(223, 220, 179, 0.2);
+    --terracotta: #C2855E; --clay: #BD7662; --sage: #BCBD94; --river: #75A5A9;
+    --mark-filter: brightness(0.92);
+    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    background: var(--paper);
+    background: var(--field);
     color: var(--ink);
-    font-family: var(--mono);
-    font-size: 15px;
-    line-height: 1.55;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
     padding-block: 0;
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
+    position: relative;
   }
-  a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
+  /* paper grain over the field */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.9 0'/></filter><rect width='180' height='180' filter='url(%23g)'/></svg>");
+    background-size: 180px 180px;
+  }
+  a { color: var(--terracotta); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible { outline: 2px solid var(--river); outline-offset: 3px; }
 
-  .sheet {
-    max-width: 720px;
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
     margin: 0 auto;
-    padding-block: 40px 56px;
+    padding-block: 44px 64px;
     display: grid;
-    gap: 40px;
+    gap: 44px;
   }
 
-  /* masthead */
-  .mast { display: grid; gap: 18px; }
-  .mast-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .mast h1 {
-    font-family: var(--display);
+  /* entry moment, small on purpose */
+  .entry { display: grid; gap: 22px; }
+  .wordmark {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft);
+  }
+  .wordmark b { font-family: var(--sans); font-weight: 400; font-size: 18px; letter-spacing: 0.12em; color: var(--ink); }
+  .entry h1 {
     font-weight: 400;
-    font-size: clamp(64px, 16vw, 128px);
-    line-height: 0.9;
-    letter-spacing: 0.01em;
+    font-size: clamp(34px, 7vw, 52px);
+    line-height: 1.05;
     margin: 0;
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
     text-wrap: balance;
+    max-width: 14ch;
   }
-  .mast h1 span { display: block; color: var(--clay); }
-  .mark { width: 120px; max-width: 100%; flex: 0 0 auto; }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 12px;
-    color: var(--ink-soft);
-  }
-  .manifesto {
-    margin: 0;
-    max-width: 52ch;
-    font-size: 15px;
-    color: var(--ink);
-  }
-  .manifesto em { font-style: italic; }
+  .entry-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
+  .river { width: 92px; max-width: 100%; height: auto; filter: var(--mark-filter); justify-self: end; }
+  .lede { margin: 0; max-width: 58ch; font-size: 17px; line-height: 1.5; }
+  .lede + .lede { color: var(--ink-soft); }
 
-  /* the list */
-  .dates { display: grid; border-top: 2px solid var(--ink); }
-  .date {
+  /* a partner's own words, kept in their capitalisation, named */
+  .guest-voice {
+    margin: 0;
+    padding: 18px 20px;
+    border-left: 2px solid var(--clay);
+    background: var(--field-deep);
     display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 8px 20px;
-    padding-block: 22px;
+    gap: 8px;
+    max-width: 60ch;
+  }
+  .guest-voice p { margin: 0; font-size: 15px; line-height: 1.55; }
+  .guest-voice cite { font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+
+  /* the calendar */
+  .month { display: grid; gap: 0; }
+  .month-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+  }
+  .month-head h2 { margin: 0; font-weight: 400; font-size: 22px; letter-spacing: 0.01em; }
+  .month-head span { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
+
+  .event {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px 14px;
+    padding-block: 20px;
     border-bottom: 1px solid var(--rule);
     align-items: start;
   }
-  .when { display: grid; gap: 2px; }
-  .when .day {
-    font-family: var(--display);
-    font-size: 56px;
-    line-height: 0.85;
-    color: var(--clay);
-    letter-spacing: 0.01em;
+  .cue { width: 18px; height: 18px; margin-top: 4px; filter: var(--mark-filter); opacity: 0.9; }
+  .body { min-width: 0; display: grid; gap: 7px; }
+  .dateline {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--terracotta);
     font-variant-numeric: tabular-nums;
+    display: flex; flex-wrap: wrap; gap: 4px 12px;
   }
-  .when .wd { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
-  .when .time { font-size: 13px; color: var(--ink-soft); }
-  .what { min-width: 0; display: grid; gap: 6px; }
-  .what h2 {
-    font-family: var(--display);
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 1.05;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    text-wrap: balance;
-  }
-  .what .line { margin: 0; max-width: 60ch; }
-  .what .with { margin: 0; font-size: 13px; color: var(--ink-soft); }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 4px; }
-  .tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 3px 8px;
-    border: 1px solid var(--rule);
-    color: var(--ink-soft);
-    white-space: nowrap;
-  }
-  .tag.live { border-color: var(--clay); color: var(--clay); }
-  .tag.soon { background: var(--sky); color: var(--ink); border-color: transparent; }
+  .dateline .tbc { color: var(--ink-soft); }
+  .event h3 { margin: 0; font-weight: 400; font-size: 21px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance; }
+  .event p { margin: 0; max-width: 60ch; color: var(--ink); }
+  .event p.note { color: var(--ink-soft); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 2px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-soft); }
+  .tags span::before { content: "· "; }
+  .tags span:first-child::before { content: ""; }
+  .tags .open { color: var(--river); }
 
-  /* footer */
-  .foot {
-    display: grid;
-    gap: 14px;
-    padding-top: 22px;
-    border-top: 2px solid var(--ink);
+  /* the practical lines, last */
+  .practical { display: grid; gap: 16px; padding-top: 6px; }
+  .practical p { margin: 0; max-width: 60ch; }
+  .practical .small { font-size: 14px; color: var(--ink-soft); }
+  .where {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft);
+    padding-top: 18px; border-top: 1px solid var(--ink);
   }
-  .foot-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; }
-  .foot .cta { font-size: 15px; }
-  .foot .cta strong { font-weight: 700; }
-  .foot-marks { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
-  .foot-marks svg { width: 44px; height: 44px; }
-  .allergies { color: var(--ink-soft); font-size: 13px; max-width: 60ch; }
 
   @media (max-width: 480px) {
-    .sheet { padding-block: 28px 44px; gap: 32px; }
-    .date { grid-template-columns: 72px 1fr; gap: 6px 14px; }
-    .when .day { font-size: 44px; }
-    .what h2 { font-size: 22px; }
-    .mark { width: 88px; }
+    .page { padding-block: 32px 48px; gap: 36px; }
+    .entry-row { grid-template-columns: 1fr; }
+    .river { width: 72px; justify-self: start; }
+    .event { grid-template-columns: 16px 1fr; gap: 8px 12px; }
+    .cue { width: 14px; height: 14px; margin-top: 5px; }
+    .event h3 { font-size: 19px; }
   }
   @media (prefers-reduced-motion: no-preference) {
-    .date { transition: background-color 180ms ease; }
-    .date:hover { background: var(--paper-deep); }
+    .event { transition: background-color 160ms ease; }
+    .event:hover { background: var(--field-deep); }
   }
 </style>
 
-<main class="sheet">
-  <header class="mast">
-    <div class="mast-row">
-      <p class="eyebrow">Gypsy Lisboa · the kitchen at TEJÁ House</p>
-      <!-- linocut mark: wavy lines and a plate, after the menu sheets -->
-      <svg class="mark" viewBox="0 0 120 88" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square">
-        <path d="M6 10 C 40 10, 20 44, 50 44 S 60 80, 92 80" />
-        <path d="M6 26 C 40 26, 20 60, 50 60 S 60 96, 92 96" />
-        <path d="M6 -6 C 40 -6, 20 28, 50 28 S 60 64, 92 64" />
-        <circle cx="98" cy="20" r="14" fill="currentColor" stroke="none" />
-      </svg>
+<main class="page">
+  <header class="entry">
+    <div class="wordmark">
+      <b>TEJÁ</b>
+      <span>cais do sodré · lisboa</span>
     </div>
-    <h1>November <span>at the table</span></h1>
-    <p class="manifesto">Born of Anatolian fire and Mediterranean flow. Six tables this month, every one of them shared. <em>Come alone, leave with more.</em></p>
+    <div class="entry-row">
+      <h1>gypsy, november</h1>
+      <img class="river" src="assets/teja-river.png" alt="" aria-hidden="true" width="340" height="520">
+    </div>
+    <p class="lede">Our kitchen is Gypsy, and in november it sets six tables: a launch for the autumn menu, the last dinner of the Mushroom Festival, two lunches, one evening eaten blindfolded and one dinner moved into the sound room.</p>
+    <p class="lede">Every one of them is served family style, with the dishes in the middle and the seating shared, and every one of them is listed here as it is confirmed.</p>
+    <blockquote class="guest-voice">
+      <p>Our dishes will be served family style, made for sharing, filling the table for everyone to enjoy together. Just as we share the food, we hope to share stories, conversations, and good moments around the same table.</p>
+      <cite>Gypsy Lisboa</cite>
+    </blockquote>
   </header>
 
-  <section class="dates" aria-label="November dates">
+  <section class="month" aria-label="november">
+    <div class="month-head">
+      <h2>november</h2>
+      <span>six tables · tejá house</span>
+    </div>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">06</div>
-        <div class="wd">Friday</div>
-        <div class="time">19:30</div>
-      </div>
-      <div class="what">
-        <h2>Fall menu launch</h2>
-        <p class="line">The first taste of the autumn menu, for the people closest to Gypsy, and the night we tell you about the new space.</p>
-        <p class="with">Friends and family. Served family style, in three acts.</p>
-        <div class="tags"><span class="tag">Invite only</span><span class="tag">45 seats</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>fri 06 nov</span><span>19:30 to 22:00</span></div>
+        <h3>fall menu launch, friends and family</h3>
+        <p>Gypsy serves the autumn menu for the first time to the people who have been at the table since the kitchen opened, in three acts, and before the night ends says something about the new space. Invite only, with approval on Luma. 45 seats.</p>
+        <div class="tags"><span>dinner</span><span>friends and family</span><span>invite only</span></div>
       </div>
     </article>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">08</div>
-        <div class="wd">Sunday</div>
-        <div class="time">19:00</div>
-      </div>
-      <div class="what">
-        <h2>The Mushroom Dinner</h2>
-        <p class="line">The last table of the festival. A day of mushrooms ends around a shared dinner cooked with them.</p>
-        <p class="with">Gypsy x Ostra da Terra, closing the Mushroom Festival, Spore Edition, with MOM.</p>
-        <div class="tags"><span class="tag live">Live on Luma</span><span class="tag">With the festival forest ticket</span><span class="tag">Kids under 12 · 20</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>sun 08 nov</span><span>19:00 to 21:00</span></div>
+        <h3>the mushroom dinner, gypsy x ostra da terra</h3>
+        <p>The Mushroom Festival, Spore Edition, ends at our table. Gypsy cooks with Ostra da Terra, and the menu is built on the mushrooms the festival spent its weekend on. Seats come with the festival forest ticket, and a child under 12 joins for 20. With MOM.</p>
+        <p class="note">Open on Luma: <a href="https://luma.com/tejahouse-xali">luma.com/tejahouse-xali</a></p>
+        <div class="tags"><span>dinner</span><span>festival</span><span class="open">open now</span></div>
       </div>
     </article>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">12</div>
-        <div class="wd">Thursday</div>
-        <div class="time">13:00</div>
-      </div>
-      <div class="what">
-        <h2>Gypsy Lunch, family style</h2>
-        <p class="line">One long table, dishes in the middle, a slow Thursday lunch with people you have not met yet.</p>
-        <p class="with">Turkish and Mediterranean sharing menu. Vegetarian and vegan plates on every table.</p>
-        <div class="tags"><span class="tag soon">Luma soon</span><span class="tag">24 seats</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 12 nov</span><span>13:00 to 15:00</span></div>
+        <h3>gypsy lunch, family style</h3>
+        <p>One long table and a sharing menu from the Gypsy kitchen, Turkish and Mediterranean, with vegetarian and vegan plates on every table. Doors at 13:00, dishes at 13:30, tea by 15:00. 24 seats. One price a head, to be confirmed with the kitchen.</p>
+        <div class="tags"><span>lunch</span><span>opens soon</span></div>
       </div>
     </article>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">19</div>
-        <div class="wd">Thursday</div>
-        <div class="time">Evening</div>
-      </div>
-      <div class="what">
-        <h2>LISTEN · blindfolded dining, music and tea</h2>
-        <p class="line">An evening of exploring flavours and sounds without the sense we rely on most, sight.</p>
-        <p class="with">Hosted by Niamh Padma with Nadeya on violin. Five courses from the Gypsy kitchen, one for each taste.</p>
-        <div class="tags"><span class="tag soon">Luma soon</span><span class="tag">Choose what you pay · 55 to 70</span><span class="tag">24 seats</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 19 nov</span><span class="tbc">evening, time to be confirmed</span></div>
+        <h3>LISTEN · blindfolded dining, music and tea</h3>
+        <p>Niamh Padma hosts the second edition, with Nadeya on violin. Tea on arrival, then five courses from the Gypsy kitchen eaten blindfolded, one for each taste, and tea again when the blindfolds come off. Choose what you pay, 55 to 70. 24 seats, and the door closes once dinner begins.</p>
+        <div class="tags"><span>dinner</span><span>blindfolded</span><span>opens soon</span></div>
       </div>
     </article>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">21</div>
-        <div class="wd">Saturday</div>
-        <div class="time">19:30</div>
-      </div>
-      <div class="what">
-        <h2>Gypsy Dinner in the Sound Room</h2>
-        <p class="line">The Gypsy long table moves into the sound room for one night.</p>
-        <p class="with">Floor seating on cushions, the autumn menu in three acts, wine pairing in acts one and two. Shoes off.</p>
-        <div class="tags"><span class="tag soon">Luma soon</span><span class="tag">45 seats</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>sat 21 nov</span><span>19:30 to 22:30</span></div>
+        <h3>gypsy dinner in the sound room</h3>
+        <p>The long table moves into the sound room for one night, with floor seating on cushions and the autumn menu in three acts, wine pairing in the first two. Shoes off at the door. 45 seats, price to be confirmed.</p>
+        <div class="tags"><span>dinner</span><span>sound room</span><span>opens soon</span></div>
       </div>
     </article>
 
-    <article class="date">
-      <div class="when">
-        <div class="day">26</div>
-        <div class="wd">Thursday</div>
-        <div class="time">13:00</div>
-      </div>
-      <div class="what">
-        <h2>Gypsy Lunch, family style</h2>
-        <p class="line">The long table is back for lunch. Same seat, new faces.</p>
-        <p class="with">If you came on the 12th, bring the person you told about it.</p>
-        <div class="tags"><span class="tag soon">Luma soon</span><span class="tag">24 seats</span></div>
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 26 nov</span><span>13:00 to 15:00</span></div>
+        <h3>gypsy lunch, family style</h3>
+        <p>The same table and the same format two weeks on, with a menu that follows the market. 24 seats.</p>
+        <div class="tags"><span>lunch</span><span>opens soon</span></div>
       </div>
     </article>
-
   </section>
 
-  <footer class="foot">
-    <p class="cta"><strong>Seats on Luma.</strong> Mushroom Dinner: <a href="https://luma.com/tejahouse-xali">luma.com/tejahouse-xali</a>. The rest open as Gypsy confirms each menu.</p>
-    <p class="allergies">Every page asks for your phone, your diet and your allergies, so the kitchen can cook for you.</p>
-    <div class="foot-row">
-      <span>TEJÁ HOUSE · Cais do Sodré 5, 1200-450 Lisboa</span>
-      <span>Gypsy Lisboa</span>
-    </div>
-    <div class="foot-marks" aria-hidden="true">
-      <!-- fork -->
-      <svg viewBox="0 0 44 44" fill="currentColor"><rect x="19" y="18" width="6" height="24"/><rect x="12" y="2" width="4" height="16"/><rect x="20" y="2" width="4" height="16"/><rect x="28" y="2" width="4" height="16"/><rect x="12" y="14" width="20" height="6"/></svg>
-      <!-- plate -->
-      <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="5"><circle cx="22" cy="22" r="17"/><circle cx="22" cy="22" r="7" fill="currentColor" stroke="none"/></svg>
-      <!-- fish -->
-      <svg viewBox="0 0 44 44" fill="currentColor"><path d="M4 22 C 12 10, 26 10, 34 22 C 26 34, 12 34, 4 22 Z"/><path d="M32 22 L 42 12 L 42 32 Z"/><circle cx="12" cy="20" r="2.2" fill="var(--paper)"/></svg>
+  <footer class="practical">
+    <p>Seats are on Luma. The Mushroom Dinner is open now, and the other five open as Gypsy confirms each menu. Each page asks for a phone number, dietary needs and allergies, so the kitchen can cook for you.</p>
+    <p class="small">Six or more for a private dinner? Write to reservation@tejahouse.com.</p>
+    <div class="where">
+      <span>tejá house · cais do sodré 5, 1200-450 lisboa</span>
+      <span>the kitchen at tejá is gypsy</span>
     </div>
   </footer>
 </main>
