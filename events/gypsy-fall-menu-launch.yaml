@@ -1,0 +1,49 @@
+# Gypsy Fall Menu Launch + new space announcement
+# calendar: "Gypsy Fall Menu & new space announcment friends and family", thu 6 nov 19:30-22:00
+
+name: "Gypsy Fall Menu Launch"
+brand: gypsy
+date: 2026-11-06
+day: "thursday"
+hours: "19:30 - 22:00"
+
+venue:
+  name: TEJÁ HOUSE
+  address: "Cais do Sodré 5, 1200-450 Lisboa"
+  maps_link: ""
+  instagram: "tejahouse"
+
+ticket_link: "https://luma.com/..."
+updates_link: ""
+price: null
+visibility: "friends and family, invite only, approval required on luma"
+
+intention: "the first taste of the autumn menu, shared with the people closest to Gypsy, and the evening we announce the new space"
+guest_feeling: "warm, welcomed, first to know"
+theme: "fall menu launch and new space announcement"
+
+schedule:
+  - time: "19:30"
+    name: "doors, a welcome drink"
+    feeling: "arrival"
+  - time: "20:00"
+    name: "the autumn menu, served family style in three acts"
+    feeling: "discovery"
+  - time: "21:30"
+    name: "a few words on the new space"
+    feeling: "anticipation"
+  - time: "22:00"
+    name: "tea, sweets, goodbyes"
+    feeling: "completion"
+
+offerings:
+  - "autumn menu preview, sharing format"
+  - "the new space announcement"
+
+house_rules:
+  - "tell us about allergies when you register"
+  - "phones welcome, we would love your photos"
+
+contact:
+  email: "curation@tejahouse.com"
+  instagram: "@gypsy.lisboa"
