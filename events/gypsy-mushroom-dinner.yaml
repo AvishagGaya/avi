@@ -1,0 +1,39 @@
+# The Mushroom Dinner · Gypsy x Ostra da Terra
+# closes the Mushroom Festival · Spore Edition (7 to 8 nov, with MOM / Perry)
+# luma page already live (private): https://luma.com/tejahouse-xali
+
+name: "The Mushroom Dinner · Gypsy x Ostra da Terra"
+brand: gypsy
+date: 2026-11-08
+day: "sunday"
+hours: "19:00 - 21:00"
+
+venue:
+  name: TEJÁ HOUSE
+  address: "Cais do Sodré 5, 1200-450 Lisboa"
+  instagram: "tejahouse"
+
+ticket_link: "https://luma.com/tejahouse-xali"
+festival_link: "https://www.mom-wow.com/festival"
+price: "included in the festival forest ticket, kids under 12 add 20"
+
+intention: "the last table of the festival. a day of mushrooms ends the way it should, around a shared dinner cooked with them"
+guest_feeling: "grounded, curious, full"
+
+schedule:
+  - time: "19:00"
+    name: "doors, the festival crowd comes in from the day"
+  - time: "19:30"
+    name: "the mushroom menu, served family style"
+  - time: "21:00"
+    name: "closing"
+
+collaborators:
+  - name: "Ostra da Terra"
+    role: "mushrooms and co-cooking"
+  - name: "MOM · Longevity Alchemists"
+    role: "festival organiser (Perry)"
+
+house_rules:
+  - "seats come with the festival forest ticket, register on luma to hold yours"
+  - "tell us about allergies when you register"

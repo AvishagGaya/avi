@@ -1,6 +1,6 @@
 # Gypsy · november campaigns
 
-five dates. each one has a one-liner (instagram caption, luma subtitle, whatsapp
+six dates. each one has a one-liner (instagram caption, luma subtitle, whatsapp
 first line), a paragraph (luma description, website, newsletter) and the photos to
 pull. copy follows the house voice: lowercase, warm, no hype.
 
@@ -27,7 +27,32 @@ say about the new space. friends and family only, approval on luma, 45 seats.
 - fallback: food close-ups from Drive folder "03 10 (gypsy dinner)", DSC07684 to
   DSC07920, 55 high-res frames from the 3 october dinner.
 
-## 2 · Gypsy Lunch, family style · thursday 12 november, 13:00
+## 2 · The Mushroom Dinner · Gypsy x Ostra da Terra · sunday 8 november, 19:00
+
+**one-liner:** the last table of the festival. a day of mushrooms ends around a
+shared dinner cooked with them.
+
+**paragraph:** the Mushroom Festival, Spore Edition, closes at TEJÁ House with a
+dinner cooked by Gypsy together with Ostra da Terra. after the forest walk on
+saturday and a sunday of talks, market and mycelium, the festival sits down at
+one table. the menu is built around the mushrooms themselves, served family
+style, 19:00 to 21:00. seats come with the festival forest ticket, and a child
+under 12 joins for a 20 euro kids supplement. organised with MOM.
+
+**status:** the luma page is already live and private,
+https://luma.com/tejahouse-xali (manage: evt-QvjxXpIGrTdBce4). it is not in the
+creation payloads, so the script will not duplicate it. what it still needs:
+the menu once Ostra da Terra sends the recipes, a line on who Ostra da Terra is,
+and the registration questions (phone, diet, allergies).
+
+**photos:**
+- cover: the gallery image already on the luma page.
+- ask Ostra da Terra for 2 or 3 photos of the mushrooms and the growing, and
+  Perry for the festival artwork from mom-wow.com/festival so the dinner reads
+  as part of the festival.
+- fallback: Gypsy kitchen frames from "03 10 (gypsy dinner)".
+
+## 3 · Gypsy Lunch, family style · thursday 12 november, 13:00
 
 **one-liner:** one long table, dishes in the middle, a slow thursday lunch with
 people you have not met yet.
@@ -46,7 +71,7 @@ person, to confirm.
 - for later editions: shoot the 12 november lunch, one wide of the table and
   one of hands passing a plate, and use those for 26 november onwards.
 
-## 3 · LISTEN · blindfolded dinner · thursday 19 november (time to confirm)
+## 4 · LISTEN · blindfolded dinner · thursday 19 november (time to confirm)
 
 **one-liner:** an evening of exploring flavours and sounds without the sense we
 rely on most, sight.
@@ -68,7 +93,7 @@ what you pay, 55 to 70 euros. 24 seats. doors close once dinner begins.
 - Niamh and Nadeya portraits are in the shared Drive folder from the october
   thread (folder 1g5UX_mZkMdTadFjbfoFyzHJWAC1bkOc0).
 
-## 4 · Gypsy Dinner in the Sound Room · saturday 21 november, 19:30
+## 5 · Gypsy Dinner in the Sound Room · saturday 21 november, 19:30
 
 **one-liner:** the Gypsy long table moves into the sound room for one night.
 
@@ -86,7 +111,7 @@ room. 45 seats, price to confirm (october ran at 50 to 60).
   shortlist 3: one wide of the full table, one of the plates in act two, one of
   guests leaning on the wall during the show.
 
-## 5 · Gypsy Lunch, family style · thursday 26 november, 13:00
+## 6 · Gypsy Lunch, family style · thursday 26 november, 13:00
 
 **one-liner:** the long table is back for lunch. same seat, new faces.
 
@@ -102,7 +127,6 @@ swap in those.
 
 ## also on the calendar, not in this promotion
 
-- sun 8 nov: mushroom festival dinner, Gypsy x Ostra da Terra
 - sun 15 nov: Cozy Dinner x Gypsy, seated dinner upstairs
 - fri 27 nov: one thousand club dinner (OTC), decorated Gypsy dinner
 - fri 11 dec: Gypsy Dinner with Kedi Sultan
