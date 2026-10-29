@@ -1,0 +1,269 @@
+<title>Gypsy November</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* layout: the TEJÁ calendar grammar from the brand book. text only, by date, a month
+     header, lowercase category tags, mono datelines. Agrandir for everything, system mono
+     for data, the triangle as the click cue, paper grain over the light field. */
+  @font-face {
+    font-family: 'Agrandir';
+    src: url('assets/agrandir-c3-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  :root {
+    --field: #FAF7F0;        /* light earthy, web */
+    --field-deep: #F1ECE0;
+    --ink: #1F2A33;          /* ink, web */
+    --ink-soft: rgba(31, 42, 51, 0.64);
+    --rule: rgba(31, 42, 51, 0.18);
+    --terracotta: #833A25;   /* warm accent, web */
+    --clay: #C2855E;
+    --sage: #A9BE8C;
+    --river: #5E7E95;
+    --mark-filter: none;
+    --sans: 'Agrandir', 'Helvetica Neue', Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --field: #1F2A33; --field-deep: #26323C; --ink: #DFDCB3;
+      --ink-soft: rgba(223, 220, 179, 0.66); --rule: rgba(223, 220, 179, 0.2);
+      --terracotta: #C2855E; --clay: #BD7662; --sage: #BCBD94; --river: #75A5A9;
+      --mark-filter: brightness(0.92);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --field: #1F2A33; --field-deep: #26323C; --ink: #DFDCB3;
+    --ink-soft: rgba(223, 220, 179, 0.66); --rule: rgba(223, 220, 179, 0.2);
+    --terracotta: #C2855E; --clay: #BD7662; --sage: #BCBD94; --river: #75A5A9;
+    --mark-filter: brightness(0.92);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--field);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-block: 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    position: relative;
+  }
+  /* paper grain over the field */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.9 0'/></filter><rect width='180' height='180' filter='url(%23g)'/></svg>");
+    background-size: 180px 180px;
+  }
+  a { color: var(--terracotta); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible { outline: 2px solid var(--river); outline-offset: 3px; }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding-block: 44px 64px;
+    display: grid;
+    gap: 44px;
+  }
+
+  /* entry moment, small on purpose */
+  .entry { display: grid; gap: 22px; }
+  .wordmark {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft);
+  }
+  .wordmark b { font-family: var(--sans); font-weight: 400; font-size: 18px; letter-spacing: 0.12em; color: var(--ink); }
+  .entry h1 {
+    font-weight: 400;
+    font-size: clamp(34px, 7vw, 52px);
+    line-height: 1.05;
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+  .entry-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
+  .river { width: 92px; max-width: 100%; height: auto; filter: var(--mark-filter); justify-self: end; }
+  .lede { margin: 0; max-width: 58ch; font-size: 17px; line-height: 1.5; }
+  .lede + .lede { color: var(--ink-soft); }
+
+  /* a partner's own words, kept in their capitalisation, named */
+  .guest-voice {
+    margin: 0;
+    padding: 18px 20px;
+    border-left: 2px solid var(--clay);
+    background: var(--field-deep);
+    display: grid;
+    gap: 8px;
+    max-width: 60ch;
+  }
+  .guest-voice p { margin: 0; font-size: 15px; line-height: 1.55; }
+  .guest-voice cite { font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+
+  /* the calendar */
+  .month { display: grid; gap: 0; }
+  .month-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+  }
+  .month-head h2 { margin: 0; font-weight: 400; font-size: 22px; letter-spacing: 0.01em; }
+  .month-head span { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
+
+  .event {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px 14px;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .cue { width: 18px; height: 18px; margin-top: 4px; filter: var(--mark-filter); opacity: 0.9; }
+  .body { min-width: 0; display: grid; gap: 7px; }
+  .dateline {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--terracotta);
+    font-variant-numeric: tabular-nums;
+    display: flex; flex-wrap: wrap; gap: 4px 12px;
+  }
+  .dateline .tbc { color: var(--ink-soft); }
+  .event h3 { margin: 0; font-weight: 400; font-size: 21px; line-height: 1.2; letter-spacing: -0.005em; text-wrap: balance; }
+  .event p { margin: 0; max-width: 60ch; color: var(--ink); }
+  .event p.note { color: var(--ink-soft); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 2px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-soft); }
+  .tags span::before { content: "· "; }
+  .tags span:first-child::before { content: ""; }
+  .tags .open { color: var(--river); }
+
+  /* the practical lines, last */
+  .practical { display: grid; gap: 16px; padding-top: 6px; }
+  .practical p { margin: 0; max-width: 60ch; }
+  .practical .small { font-size: 14px; color: var(--ink-soft); }
+  .where {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft);
+    padding-top: 18px; border-top: 1px solid var(--ink);
+  }
+
+  @media (max-width: 480px) {
+    .page { padding-block: 32px 48px; gap: 36px; }
+    .entry-row { grid-template-columns: 1fr; }
+    .river { width: 72px; justify-self: start; }
+    .event { grid-template-columns: 16px 1fr; gap: 8px 12px; }
+    .cue { width: 14px; height: 14px; margin-top: 5px; }
+    .event h3 { font-size: 19px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .event { transition: background-color 160ms ease; }
+    .event:hover { background: var(--field-deep); }
+  }
+</style>
+
+<main class="page">
+  <header class="entry">
+    <div class="wordmark">
+      <b>TEJÁ</b>
+      <span>cais do sodré · lisboa</span>
+    </div>
+    <div class="entry-row">
+      <h1>gypsy, november</h1>
+      <img class="river" src="assets/teja-river.png" alt="" aria-hidden="true" width="340" height="520">
+    </div>
+    <p class="lede">Our kitchen is Gypsy, and in november it sets six tables: a launch for the autumn menu, the last dinner of the Mushroom Festival, two lunches, one evening eaten blindfolded and one dinner moved into the sound room.</p>
+    <p class="lede">Every one of them is served family style, with the dishes in the middle and the seating shared, and every one of them is listed here as it is confirmed.</p>
+    <blockquote class="guest-voice">
+      <p>Our dishes will be served family style, made for sharing, filling the table for everyone to enjoy together. Just as we share the food, we hope to share stories, conversations, and good moments around the same table.</p>
+      <cite>Gypsy Lisboa</cite>
+    </blockquote>
+  </header>
+
+  <section class="month" aria-label="november">
+    <div class="month-head">
+      <h2>november</h2>
+      <span>six tables · tejá house</span>
+    </div>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>fri 06 nov</span><span>19:30 to 22:00</span></div>
+        <h3>fall menu launch, friends and family</h3>
+        <p>Gypsy serves the autumn menu for the first time to the people who have been at the table since the kitchen opened, in three acts, and before the night ends says something about the new space. Invite only, with approval on Luma. 45 seats.</p>
+        <div class="tags"><span>dinner</span><span>friends and family</span><span>invite only</span></div>
+      </div>
+    </article>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>sun 08 nov</span><span>19:00 to 21:00</span></div>
+        <h3>the mushroom dinner, gypsy x ostra da terra</h3>
+        <p>The Mushroom Festival, Spore Edition, ends at our table. Gypsy cooks with Ostra da Terra, and the menu is built on the mushrooms the festival spent its weekend on. Seats come with the festival forest ticket, and a child under 12 joins for 20. With MOM.</p>
+        <p class="note">Open on Luma: <a href="https://luma.com/tejahouse-xali">luma.com/tejahouse-xali</a></p>
+        <div class="tags"><span>dinner</span><span>festival</span><span class="open">open now</span></div>
+      </div>
+    </article>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 12 nov</span><span>13:00 to 15:00</span></div>
+        <h3>gypsy lunch, family style</h3>
+        <p>One long table and a sharing menu from the Gypsy kitchen, Turkish and Mediterranean, with vegetarian and vegan plates on every table. Doors at 13:00, dishes at 13:30, tea by 15:00. 24 seats. One price a head, to be confirmed with the kitchen.</p>
+        <div class="tags"><span>lunch</span><span>opens soon</span></div>
+      </div>
+    </article>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 19 nov</span><span class="tbc">evening, time to be confirmed</span></div>
+        <h3>LISTEN · blindfolded dining, music and tea</h3>
+        <p>Niamh Padma hosts the second edition, with Nadeya on violin. Tea on arrival, then five courses from the Gypsy kitchen eaten blindfolded, one for each taste, and tea again when the blindfolds come off. Choose what you pay, 55 to 70. 24 seats, and the door closes once dinner begins.</p>
+        <div class="tags"><span>dinner</span><span>blindfolded</span><span>opens soon</span></div>
+      </div>
+    </article>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>sat 21 nov</span><span>19:30 to 22:30</span></div>
+        <h3>gypsy dinner in the sound room</h3>
+        <p>The long table moves into the sound room for one night, with floor seating on cushions and the autumn menu in three acts, wine pairing in the first two. Shoes off at the door. 45 seats, price to be confirmed.</p>
+        <div class="tags"><span>dinner</span><span>sound room</span><span>opens soon</span></div>
+      </div>
+    </article>
+
+    <article class="event">
+      <img class="cue" src="assets/teja-triangle.png" alt="" aria-hidden="true" width="316" height="360">
+      <div class="body">
+        <div class="dateline"><span>thu 26 nov</span><span>13:00 to 15:00</span></div>
+        <h3>gypsy lunch, family style</h3>
+        <p>The same table and the same format two weeks on, with a menu that follows the market. 24 seats.</p>
+        <div class="tags"><span>lunch</span><span>opens soon</span></div>
+      </div>
+    </article>
+  </section>
+
+  <footer class="practical">
+    <p>Seats are on Luma. The Mushroom Dinner is open now, and the other five open as Gypsy confirms each menu. Each page asks for a phone number, dietary needs and allergies, so the kitchen can cook for you.</p>
+    <p class="small">Six or more for a private dinner? Write to reservation@tejahouse.com.</p>
+    <div class="where">
+      <span>tejá house · cais do sodré 5, 1200-450 lisboa</span>
+      <span>the kitchen at tejá is gypsy</span>
+    </div>
+  </footer>
+</main>

@@ -1,0 +1,107 @@
+[
+  {
+    "_campaign": "1 · Gypsy Fall Menu Launch + new space, friday 6 november, friends and family (private, approval)",
+    "name": "Gypsy Fall Menu Launch · friends and family",
+    "start_at": "2026-11-06T19:30:00.000Z",
+    "end_at": "2026-11-06T22:00:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "private",
+    "registration_open": true,
+    "max_capacity": 45,
+    "phone_number_requirement": "required",
+    "show_guest_list": false,
+    "geo_address_json": {
+      "type": "manual",
+      "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal"
+    },
+    "ticket_types": [
+      {
+        "name": "friends and family",
+        "type": "free",
+        "require_approval": true,
+        "max_capacity": 45
+      }
+    ],
+    "description_md": "the first taste of the autumn menu, shared with the people closest to Gypsy.\n\nbefore the new menu goes public, we gather the people who have been around the table since the beginning. the kitchen serves the autumn plates family style, in three acts, and at the end of the evening we have something to tell you about the new space.\n\n**19:30** doors, a welcome drink  \n**20:00** the autumn menu, served family style  \n**21:30** a few words on the new space  \n**22:00** tea, sweets, goodbyes\n\nthis one is invite only. tell us about allergies when you register.\n\nwith love, Gypsy ♡",
+    "cover_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,quality=80,width=1200,height=630/uploads/7y/5bdc642d-5273-4860-89d2-97e8348b1008.jpg"
+  },
+  {
+    "_campaign": "3 · Gypsy Lunch, family style, thursday 12 november (price to confirm with Gypsy)",
+    "name": "Gypsy Lunch · family style",
+    "start_at": "2026-11-12T13:00:00.000Z",
+    "end_at": "2026-11-12T15:00:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "public",
+    "registration_open": false,
+    "max_capacity": 24,
+    "phone_number_requirement": "required",
+    "geo_address_json": {
+      "type": "manual",
+      "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal"
+    },
+    "cover_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,quality=80,width=1200,height=630/uploads/as/2831bff4-e501-40e0-82e4-5153390eca68.jpg",
+    "description_md": "one long table. dishes in the middle. a slow thursday lunch with people you have not met yet.\n\nthe Gypsy kitchen cooks a sharing menu, turkish and mediterranean, served family style. you come alone or with a friend, you sit where there is a seat, and the plates do the introductions.\n\n**13:00** doors open, find a seat at the long table  \n**13:30** dishes arrive, served family style  \n**15:00** tea and goodbyes\n\nvegetarian and vegan plates on every table. tell us about allergies when you register.\n\nsee you around the table ♡"
+  },
+  {
+    "_campaign": "4 · LISTEN blindfolded dinner, thursday 19 november, with Niamh and Nadeya (time to confirm)",
+    "name": "LISTEN · Blindfolded Dining, Music and Tea",
+    "start_at": "2026-11-19T20:30:00.000Z",
+    "end_at": "2026-11-19T23:30:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "public",
+    "registration_open": true,
+    "max_capacity": 24,
+    "phone_number_requirement": "required",
+    "geo_address_json": {
+      "type": "manual",
+      "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal"
+    },
+    "ticket_types": [
+      {
+        "name": "dinner, choose what you pay",
+        "type": "paid",
+        "is_flexible": true,
+        "cents": 7000,
+        "min_cents": 5500,
+        "currency": "eur",
+        "max_capacity": 24
+      }
+    ],
+    "description_md": "an evening of exploring flavours and sounds without the sense we rely on most, sight.\n\nafter a full table in october, LISTEN returns. you arrive, you are welcomed with tea, and then the blindfolds go on. the Gypsy kitchen serves five courses, one for each taste, and Nadeya plays live violin composed for each dish. when the blindfolds come off, there is tea, and time to talk about what you tasted and heard.\n\n**20:30** doors, welcome tea  \n**21:00** blindfolds on, five courses, Nadeya on violin  \n**22:30** blindfolds off, tea and conversation  \n**23:30** closing\n\nhosted by Niamh Padma with Nadeya, Gypsy Lisboa and TEJÁ House.\n\nchoose what you pay, between 55 and 70 euros. doors close once dinner begins. water only during the dinner, the bar opens after. tell us about allergies when you register.\n\nsee you in the dark ♡",
+    "cover_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,quality=80,width=1200,height=630/uploads/7c/692871cb-8920-400d-b291-aa144915e1cb.png"
+  },
+  {
+    "_campaign": "5 · Gypsy Dinner in the Sound Room, saturday 21 november (price to confirm)",
+    "name": "Gypsy Dinner in the Sound Room",
+    "start_at": "2026-11-21T19:30:00.000Z",
+    "end_at": "2026-11-21T22:30:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "public",
+    "registration_open": false,
+    "max_capacity": 45,
+    "phone_number_requirement": "required",
+    "geo_address_json": {
+      "type": "manual",
+      "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal"
+    },
+    "description_md": "the Gypsy long table moves into the sound room for one night.\n\nfloor seating on cushions, our oriental living room, and the autumn menu in three acts, served in the sharing format we love. this time the room itself is part of the evening: the sound system of TEJÁ House holds the space while you eat.\n\n**19:30** doors open  \n**20:00** act one, cold starters  \n**20:45** act two, warm plates  \n**21:45** act three, sweets and tea  \n**22:30** closing\n\nwine pairing is included during act one and act two. shoes off in the sound room. tell us about allergies when you register.\n\nsee you around the table ♡",
+    "cover_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,quality=80,width=1200,height=630/uploads/6f/642e3541-71e4-47af-a967-dfb6b005a8a1.jpg"
+  },
+  {
+    "_campaign": "6 · Gypsy Lunch, family style, thursday 26 november (price to confirm with Gypsy)",
+    "name": "Gypsy Lunch · family style",
+    "start_at": "2026-11-26T13:00:00.000Z",
+    "end_at": "2026-11-26T15:00:00.000Z",
+    "timezone": "Europe/Lisbon",
+    "visibility": "public",
+    "registration_open": false,
+    "max_capacity": 24,
+    "phone_number_requirement": "required",
+    "geo_address_json": {
+      "type": "manual",
+      "address": "TEJÁ HOUSE, Cais do Sodré 5, 1200-450 Lisboa, Portugal"
+    },
+    "cover_url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,quality=80,width=1200,height=630/uploads/as/2831bff4-e501-40e0-82e4-5153390eca68.jpg",
+    "description_md": "one long table. dishes in the middle. a slow thursday lunch with people you have not met yet.\n\nthe Gypsy kitchen cooks a sharing menu, turkish and mediterranean, served family style. you come alone or with a friend, you sit where there is a seat, and the plates do the introductions.\n\n**13:00** doors open, find a seat at the long table  \n**13:30** dishes arrive, served family style  \n**15:00** tea and goodbyes\n\nvegetarian and vegan plates on every table. tell us about allergies when you register.\n\nsee you around the table ♡"
+  }
+]
