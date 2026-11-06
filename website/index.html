@@ -25,7 +25,10 @@
         <p>10:00 — 22:00</p>
       </div>
 
-      <a href="#tickets" class="btn">Get Tickets</a>
+      <div class="hero-actions">
+        <a href="#tickets" class="btn">Get Tickets</a>
+        <a href="#collaborate" class="link">host with us</a>
+      </div>
     </div>
   </section>
 
@@ -158,15 +161,119 @@
     </div>
   </section>
 
+  <!-- Collaborate -->
+  <section class="collab" id="collaborate">
+    <div class="container">
+      <h2>Host With Us</h2>
+      <div class="divider"></div>
+
+      <div class="collab-intro">
+        <p class="collab-lead">have a space that wants to be held, or an idea we could grow together?</p>
+        <p>we're always listening for venues, co-hosts and partners who care about the same things. tell us a little, and we'll take it from there.</p>
+      </div>
+
+      <form class="collab-form" id="collab-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="new collaboration inquiry ♡">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset class="form-step">
+          <legend>what are you reaching out about?</legend>
+          <div class="chips" role="radiogroup">
+            <label class="chip"><input type="radio" name="collab_type" value="venue" required><span>a venue</span></label>
+            <label class="chip"><input type="radio" name="collab_type" value="co-host"><span>co-hosting</span></label>
+            <label class="chip"><input type="radio" name="collab_type" value="brand partner"><span>brand partnership</span></label>
+            <label class="chip"><input type="radio" name="collab_type" value="other"><span>something else</span></label>
+          </div>
+          <p class="field-error" data-error-for="collab_type">choose one so we know where to start</p>
+        </fieldset>
+
+        <fieldset class="form-step">
+          <legend>who are you?</legend>
+          <div class="field-grid">
+            <div class="field">
+              <label for="cf-name">name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+              <p class="field-error" data-error-for="name">we'd love to know your name</p>
+            </div>
+            <div class="field">
+              <label for="cf-email">email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+              <p class="field-error" data-error-for="email">an email we can reply to</p>
+            </div>
+            <div class="field">
+              <label for="cf-phone">phone / whatsapp <span class="optional">optional</span></label>
+              <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="cf-link">instagram or website <span class="optional">optional</span></label>
+              <input id="cf-link" name="link" type="text" placeholder="@yourspace or yourspace.com">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-step venue-fields" id="venue-fields" hidden>
+          <legend>about the space</legend>
+          <div class="field-grid">
+            <div class="field">
+              <label for="cf-location">location</label>
+              <input id="cf-location" name="location" type="text" placeholder="town, region">
+            </div>
+            <div class="field">
+              <label for="cf-capacity">how many people can it hold?</label>
+              <input id="cf-capacity" name="capacity" type="number" min="1" inputmode="numeric" placeholder="e.g. 300">
+            </div>
+            <div class="field field-wide">
+              <label for="cf-dates">dates or seasons available</label>
+              <input id="cf-dates" name="dates" type="text" placeholder="e.g. weekends in spring, 20 to 22 june">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <span class="field-label">setting</span>
+              <div class="chips chips-small">
+                <label class="chip"><input type="radio" name="setting" value="indoor"><span>indoor</span></label>
+                <label class="chip"><input type="radio" name="setting" value="outdoor"><span>outdoor</span></label>
+                <label class="chip"><input type="radio" name="setting" value="both"><span>both</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <span class="field-label">overnight stay on site?</span>
+              <div class="chips chips-small">
+                <label class="chip"><input type="radio" name="overnight" value="yes"><span>yes</span></label>
+                <label class="chip"><input type="radio" name="overnight" value="no"><span>no</span></label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Send</button>
+          <p class="form-note">we read every message and reply within a few days.<br>for urgent things, call us ⤐ <a href="tel:+351961464898" class="link">+351 961 464 898</a></p>
+        </div>
+
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="collab-thanks" id="collab-thanks" hidden tabindex="-1">
+        <p class="large-text">thank you for reaching out ♡</p>
+        <p>we read every message with care and will reply within a few days.<br>until then, see you soon.</p>
+        <p class="form-note">for urgent things, call us ⤐ <a href="tel:+351961464898" class="link">+351 961 464 898</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <p>EDLX Equinox 2026</p>
+        <p><a href="#collaborate">host with us</a></p>
         <p><a href="mailto:avishagitzhak@gmail.com">avishagitzhak@gmail.com</a></p>
       </div>
     </div>
   </footer>
 
+  <script src="collab.js"></script>
 </body>
 </html>

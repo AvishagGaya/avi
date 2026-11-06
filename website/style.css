@@ -320,3 +320,212 @@ section {
     align-items: flex-start;
   }
 }
+
+/* Hero actions */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* Collaborate */
+.collab-intro {
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+.collab-lead {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.collab-form {
+  max-width: 720px;
+}
+
+.form-step {
+  border: none;
+  margin-bottom: 48px;
+}
+
+.form-step legend {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-subtle);
+  margin-bottom: 20px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 32px;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 48px;
+  margin-top: 28px;
+}
+
+.field label,
+.field-label {
+  display: block;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.optional {
+  font-size: 13px;
+  color: var(--text-subtle);
+  margin-left: 6px;
+}
+
+.field input {
+  width: 100%;
+  font: inherit;
+  font-size: 17px;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+  border-radius: 0;
+  padding: 8px 0 10px;
+  transition: border-color 0.2s ease;
+}
+
+.field input::placeholder {
+  color: var(--text-subtle);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field input[aria-invalid="true"] {
+  border-color: #9a4a3a;
+}
+
+.field-error {
+  display: none;
+  font-size: 13px;
+  color: #9a4a3a;
+  margin-top: 8px;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip span {
+  display: inline-block;
+  padding: 12px 22px;
+  font-size: 15px;
+  color: var(--text);
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.chips-small .chip span {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.chip span:hover {
+  border-color: var(--text);
+}
+
+.chip input:checked + span {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.chip input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.venue-fields:not([hidden]) {
+  animation: reveal 0.4s ease;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.form-note {
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+.form-status {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #9a4a3a;
+}
+
+.collab-thanks {
+  max-width: 600px;
+  outline: none;
+}
+
+.collab-thanks p {
+  margin-bottom: 20px;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 768px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venue-fields:not([hidden]) {
+    animation: none;
+  }
+}
